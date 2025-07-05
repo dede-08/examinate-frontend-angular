@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,7 @@ export class LoginComponent {
     "password": ''
   }
 
-  constructor(private snack: MatSnackBar, private loginService: LoginService) {
+  constructor(private snack: MatSnackBar, private loginService: LoginService, private router:Router) {
 
   }
 
@@ -61,7 +62,22 @@ export class LoginComponent {
 
           this.loginService.getCurrentUser().subscribe(
             (user: any) => {
+              this.loginService.setUser(user);
               console.log("Usuario actual:", user);
+
+              if(this.loginService.getUserRole() == "ADMIN"){
+                //dashboard admin
+                //window.location.href = '/admin';
+                this.router.navigate(['admin']);
+              }
+              else if(this.loginService.getUserRole() == "NORMAL"){
+                //user dashboard
+                //window.location.href = '/user-dashboard'
+                this.router.navigate(['user-dashboard']);
+              }
+              else{
+                this.loginService.logOut();
+              }
             },
             (error) => {
               console.error("Error al obtener usuario:", error);
@@ -74,8 +90,11 @@ export class LoginComponent {
       },
       (error) => {
         console.error("Error al generar token:", error);
+        this.snack.open('Detalles invalidos , vuelva a intentarlo !!', 'Aceptar',{
+          duration:3000
+        });
       }
-    )
+    );
   }
 
 }
