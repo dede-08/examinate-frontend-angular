@@ -8,10 +8,10 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 mat-icon {
   color: white;
-  margin-right: 8px;
+  display: flex;
 }

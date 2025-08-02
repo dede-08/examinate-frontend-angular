@@ -3,13 +3,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 import { LoginService } from '../../services/login.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
   imports: [
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
@@ -21,15 +23,15 @@ export class ProfileComponent implements OnInit{
   constructor(private loginService:LoginService){ }
 
   ngOnInit(): void {
-      this.user = this.loginService.getUser();
-      this.loginService.getCurrentUser().subscribe(
-        (user:any) => {
-          this.user = user;
-        },
-        (error) => {
-          alert("error");
-        }
-      )
+    this.user = this.loginService.getUser();
+    /*this.loginService.getCurrentUser().subscribe(
+      (user:any) => {
+        this.user = user;
+      },
+      (error) => {
+        alert("error");
+      }
+    )*/
   }
 
 }

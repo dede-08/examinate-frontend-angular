@@ -8,18 +8,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
+import { MatCard } from "@angular/material/card";
 
 @Component({
   selector: 'app-signup',
   standalone: true,
   imports: [
-    FormsModule, 
-    MatFormFieldModule, 
-    MatButtonModule, 
-    MatInputModule, 
-    HttpClientModule, 
-    CommonModule
-  ],
+    FormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    HttpClientModule,
+    CommonModule,
+    MatCard
+],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
