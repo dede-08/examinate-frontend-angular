@@ -16,3 +16,11 @@
     padding: 15px 10px;
     border: 0.5px solid gainsboro;
 }
+
+.buttons_profile{
+    display: flex;
+}
+
+.ml10{
+    margin-left: 10px;
+}

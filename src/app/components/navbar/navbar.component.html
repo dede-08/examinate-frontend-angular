@@ -6,11 +6,11 @@
     <span class="example-spacer"></span>
     <a *ngIf="!isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon">
-        Iniciar Sesión
+        Log-In
     </a>
     <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr20 ml20"
         arial-label="Example icon-button with heart icon">
-        Registrarse
+        Sign-Up
     </a>
     <a *ngIf="isLoggedIn && user" mat-button routerLink="/admin/profile"
         class="example-icon favorite-icon" arial-label="Example icon-button with heart icon">
@@ -18,7 +18,7 @@
     </a>
     <a *ngIf="isLoggedIn" (click)="logout()" mat-icon-button
         class="example-icon favorite-icon mr20 ml20" arial-label="Example icon-button with heart icon">
-        Cerrar Sesión
+        Log Out
     </a>
     
 </mat-toolbar>

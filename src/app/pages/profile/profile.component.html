@@ -1,10 +1,10 @@
-<mat-card>
-    <h1>Detalles del perfil</h1>
+<mat-card style="margin-left: 10px;">
+    <h2 class="ml10">Detalles del perfil</h2>
     <mat-card-content>
         <div class="bootstrap-wrapper">
             <div class="container">
                 <div class="text-center">
-                    <img src="https://www.flaticon.com/free-icons/user" alt="" class="profile-image">
+                    <img src="/src/assets/user-profile-filled-svgrepo-com.svg" alt="" class="profile-image">
 
                     <h1 class="mt20">{{ user.nombre}} {{ user.apellido}}</h1>
                 </div>
@@ -13,7 +13,7 @@
                         <table class="table text-center">
                             <tr>
                                 <td>Nombre de usuario</td>
-                                <td>{{ user.username }}</td>
+                                <td>{{ user.username }}</td>    
                             </tr>
                             <tr>
                                 <td>ID</td>
@@ -36,9 +36,11 @@
                 </div>
             </div>
         </div>
-        <mat-card-actions class="text-center">
+        <div class="buttons_profile">
+        <mat-card-actions class="text-center ">
             <button mat-raised-button color="primary">Actualizar</button>
             <button mat-raised-button color="accent">Compartir</button>
         </mat-card-actions>
+        </div>
     </mat-card-content>
 </mat-card>
