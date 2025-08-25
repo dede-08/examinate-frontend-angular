@@ -1,0 +1,29 @@
+/* Alineación horizontal perfecta de iconos y texto */
+button[mat-list-item] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  height: 48px !important;
+  padding: 0 16px !important;
+}
+
+/* Icono alineado horizontalmente */
+mat-icon[mat-list-icon] {
+  margin-right: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  font-size: 24px !important;
+  height: 24px !important;
+  width: 24px !important;
+}
+
+/* Texto alineado horizontalmente con el icono */
+button[mat-list-item] span {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  line-height: 1.2 !important;
+  font-size: 14px !important;
+}
